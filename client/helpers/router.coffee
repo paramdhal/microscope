@@ -5,3 +5,6 @@ Meteor.Router.add
         to: 'postPage',
         and: (id) ->
             Session.set 'currentPostId', id
+    ,           
+
+    '/submit':  'postSubmit'        
