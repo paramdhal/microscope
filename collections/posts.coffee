@@ -18,7 +18,7 @@ Meteor.methods
 
 		throw new Meteor.Error(422, "Please fill in a headline") unless postAttributes.title
 
-		throw new Meteor.Error(302, "This link has already been posted") if postAttributes.url and postWithSameLink
+		throw new Meteor.Error(302, "This link has already been posted",postWithSameLink._id) if postAttributes.url and postWithSameLink
 
 		post = _.extend(_.pick(postAttributes,"url","title","message"),
 			userId: user._id
