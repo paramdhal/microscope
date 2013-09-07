@@ -15,9 +15,11 @@
             <a class="navbar-brand" href="{{postsListPath}}">Microscope</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{postSubmitPath}}">New</a></li>
-            </ul>
+        	{{#if currentUser}}
+	            <ul class="nav navbar-nav">
+	                <li><a href="{{postSubmitPath}}">New</a></li>
+	            </ul>
+	        {{/if}}    
             <ul class="nav navbar-nav navbar-right">
                 {{loginButtons}}
             </ul>
