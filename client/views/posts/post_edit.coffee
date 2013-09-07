@@ -16,7 +16,7 @@ Template.postEdit.events
 			$set: postProperties,
 			(error) ->
 				if error
-					alert(error.reason)
+					throwError error.reason
 				else
 					Meteor.Router.to 'postPage', currentPostId
 		)

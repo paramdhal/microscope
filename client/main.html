@@ -3,10 +3,11 @@
     <title>Microscope</title>
 </head>
 <body>
+	{{>header}}
     <div class="container">
-        {{>header}}
+        
         {{>errors}}
-        <div id="main" class="row">
+        <div id="main">
           {{renderPage}}
         </div>
     </div>
