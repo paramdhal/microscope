@@ -25,8 +25,8 @@ Meteor.methods
 			author: user.username
 			submitted: new Date().getTime()
 			commentsCount: 0
-			upvotes: []
-        	votes: 0
+			votes: 0
+			upvoters: []
 		)
 
 		Posts.insert post

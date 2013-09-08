@@ -18,3 +18,22 @@ Template.postItem.events
 	'click .upvotable': (e)->
 		e.preventDefault()
 		Meteor.call 'upvote', @_id
+
+Template.postItem.rendered = ->
+	
+	rank = @data._rank		
+	$this = $(@firstNode)
+	postHeight = 75
+	newPosition = rank * postHeight
+
+	if @currentPosition?
+
+		previousPosition = @currentPosition
+		delta = previousPosition - newPosition
+		$this.css 'top': delta+ "px"
+	else
+		$this.addClass 'invisible'	
+
+	Meteor.defer =>
+		@currentPosition = newPosition
+		$this.css('top': 0).removeClass 'invisible'	
