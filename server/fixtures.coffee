@@ -24,6 +24,8 @@ if Posts.find().count() is 0
         url: 'http://sachagreif.com/introducing-telescope/' 
         submitted: hoursAgo 7
         commentsCount: 2
+        upvotes: []
+        votes: 0
 
     Comments.insert
         postId: telescopeId
@@ -46,6 +48,8 @@ if Posts.find().count() is 0
         url: 'http://meteor.com'
         submitted: hoursAgo 10
         commentsCount: 0
+        upvotes: []
+        votes: 0
 
     Posts.insert
         title: 'The Meteor Book'
@@ -54,6 +58,8 @@ if Posts.find().count() is 0
         url: 'http://themeteorbook.com'  
         submitted: hoursAgo 13
         commentsCount: 0
+        upvotes: []
+        votes: 0
 
     i = 0
 
@@ -64,6 +70,8 @@ if Posts.find().count() is 0
             userId: sacha._id
             url: "http://google.com/?q=test-" + i
             submitted: now - i * 3600 * 1000
-            commentsCount: 0   
+            commentsCount: 0
+            upvotes: []
+            votes: 0   
         i++    
 

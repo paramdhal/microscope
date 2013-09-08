@@ -13,19 +13,25 @@
                     <span class="icon-bar">
                     </span>
                 </button>
-                <a class="navbar-brand" href="{{postsListPath}}">Microscope</a>
+                <a class="navbar-brand" href="{{newPostsPath}}">Microscope</a>
             </div>
             <div class="navbar-collapse collapse">
-                {{#if currentUser}}
                 <ul class="nav navbar-nav">
+                    <li class="{{activeRouteClass 'home' 'newPosts'}}">
+                        <a href="{{homePath}}">New</a>
+                    </li>
+                    <li class="{{activeRouteClass 'bestPosts'}}">
+                        <a href="{{bestPostsPath}}">Best</a>
+                    </li>
+                    {{#if currentUser}}
                     <li>
-                        <a href="{{postSubmitPath}}">New</a>
+                        <a href="{{postSubmitPath}}">Submit Post</a>
                     </li>
                     <li class="dropdown">
                         {{> notifications}}
                     </li>
+                    {{/if}}
                 </ul>
-                {{/if}}
                 <ul class="nav navbar-nav navbar-right">
                     {{loginButtons}}
                 </ul>
